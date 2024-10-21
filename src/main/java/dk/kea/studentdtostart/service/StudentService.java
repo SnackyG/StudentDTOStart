@@ -70,6 +70,7 @@ public class StudentService {
 
     public void deleteStudent(Long id) {
         if (!studentRepository.existsById(id)) {
+            // Throw RuntimeException if student is not found
             throw new RuntimeException("Student not found with id " + id);
         }
         studentRepository.deleteById(id);
